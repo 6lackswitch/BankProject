@@ -1,0 +1,29 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "BankProject",
+      "children" : [ {
+        "name" : "TransactionTest",
+        "children" : [ {
+          "name" : "transactionsTest",
+          "uid" : "ab27de7a623635d4",
+          "parentUid" : "63bdaf415f101eeaf0e7d96865bad0ac",
+          "status" : "passed",
+          "time" : {
+            "start" : 1690706961951,
+            "stop" : 1690706966285,
+            "duration" : 4334
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "63bdaf415f101eeaf0e7d96865bad0ac"
+      } ],
+      "uid" : "fb7d724d59c1cf32dacc76647e413544"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}

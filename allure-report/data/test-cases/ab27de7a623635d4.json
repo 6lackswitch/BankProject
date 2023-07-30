@@ -1,0 +1,109 @@
+{
+  "uid" : "ab27de7a623635d4",
+  "name" : "transactionsTest",
+  "fullName" : "TransactionTest.transactionsTest",
+  "historyId" : "13c4280e8453ed16524bb3fa327cf25f",
+  "time" : {
+    "start" : 1690706961951,
+    "stop" : 1690706966285,
+    "duration" : 4334
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1690706959498,
+      "stop" : 1690706961902,
+      "duration" : 2404
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "91b6188d5176fba9",
+      "name" : "table",
+      "source" : "91b6188d5176fba9.txt",
+      "type" : "text/plain",
+      "size" : 129
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "after",
+    "time" : {
+      "start" : 1690706966342,
+      "stop" : 1690706966418,
+      "duration" : 76
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TransactionTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TransactionTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "transactionsTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "BankProject"
+  }, {
+    "name" : "subSuite",
+    "value" : "TransactionTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-156BALQ"
+  }, {
+    "name" : "thread",
+    "value" : "11196@DESKTOP-156BALQ.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ab27de7a623635d4.json",
+  "parameterValues" : [ ]
+}

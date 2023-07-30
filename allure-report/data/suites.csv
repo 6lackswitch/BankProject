@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Jul 30 11:49:21 MSK 2023","Sun Jul 30 11:49:26 MSK 2023","4334","Default Suite","BankProject","TransactionTest","TransactionTest","transactionsTest","transactionsTest",""
