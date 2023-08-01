@@ -1,4 +1,7 @@
 import Account.AccountPage;
+import Account.Table;
+import Account.TransactionForm;
+import Account.TransactionsPage;
 import Login.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,19 +12,30 @@ public class TransactionTest extends BaseTest {
 
     @Test
     public void transactionsTest() {
-        String balance = new LoginPage()
+        String balance = LoginPage.getInstance()
                 .customerLogin()
                 .loginAs("Harry Potter")
                 .depositClick()
                 .setTransaction(fibonacciInt())
+                .getBalance();
+
+        Assert.assertEquals(balance, fibonacciInt());
+
+        balance = AccountPage.getInstance()
                 .withdrawlClick()
                 .setTransaction(fibonacciInt())
                 .getBalance();
+
         Assert.assertEquals(balance, "0");
-        AccountPage
+
+        Table table = AccountPage
                 .getInstance()
                 .transactionsClick()
-                .table()
-                .extractToCsv();
+                .getTable();
+
+        Assert.assertEquals(table.getRows().size(), 2);
+
+        TransactionsPage.getInstance()
+                .extractToCsv(table);
     }
 }

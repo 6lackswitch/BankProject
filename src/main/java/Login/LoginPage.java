@@ -5,10 +5,16 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
     private final By customerLogin = By.xpath("//button[@ng-click='customer()']");
-    private final By managerLogin = By.xpath("//button[@ng-click='manager()']");
+    private static LoginPage loginPage;
+    public static LoginPage getInstance() {
+        if(loginPage == null) {
+            return new LoginPage();
+        }
+        return loginPage;
+    }
 
     public CustomerLoginPage customerLogin() {
         driver.findElement(customerLogin).click();
-        return new CustomerLoginPage();
+        return CustomerLoginPage.getInstance();
     }
 }

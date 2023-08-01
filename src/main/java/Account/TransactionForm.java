@@ -13,8 +13,14 @@ public class TransactionForm extends BasePage {
     }
 
     public AccountPage setTransaction(String deposit) {
-        driver.findElement(transactionInput).sendKeys(deposit);
-        driver.findElement(transactionSubmit).click();
+        try {
+            driver.findElement(transactionInput).sendKeys(deposit);
+            Thread.sleep(700);
+            driver.findElement(transactionSubmit).click();
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return AccountPage.getInstance();
     }
 }

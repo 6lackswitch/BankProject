@@ -10,6 +10,13 @@ public class CustomerLoginPage extends BasePage {
     private final By selectName = By.id("userSelect");
     private final By options = By.xpath("//option[@class='ng-binding ng-scope']");
     private final By login = By.xpath("//button[@type='submit']");
+    private static CustomerLoginPage customerLoginPage;
+    public static CustomerLoginPage getInstance() {
+        if(customerLoginPage == null) {
+            return new CustomerLoginPage();
+        }
+        return customerLoginPage;
+    }
 
     public CustomerLoginPage chooseName(String name) {
         driver.findElement(selectName).click();
@@ -24,6 +31,6 @@ public class CustomerLoginPage extends BasePage {
     public AccountPage loginAs(String name) {
         chooseName(name);
         driver.findElement(login).click();
-        return new AccountPage();
+        return AccountPage.getInstance();
     }
 }

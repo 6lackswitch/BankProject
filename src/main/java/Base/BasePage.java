@@ -12,7 +12,7 @@ public class BasePage {
     public static RemoteWebDriver driver;
 
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", Config.DRIVER_PATH);
         DesiredCapabilities cap = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
@@ -21,12 +21,12 @@ public class BasePage {
         cap.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         cap.setBrowserName("chrome");
         try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+            driver = new RemoteWebDriver(new URL(Config.HUB), cap);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
-        driver.manage().window().fullscreen();
+        driver.get(Config.URL);
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 }
