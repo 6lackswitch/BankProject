@@ -2,8 +2,10 @@ package Login;
 
 import Account.AccountPage;
 import Base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
 public class CustomerLoginPage extends BasePage {
@@ -11,11 +13,9 @@ public class CustomerLoginPage extends BasePage {
     private final By options = By.xpath("//option[@class='ng-binding ng-scope']");
     private final By login = By.xpath("//button[@type='submit']");
     private static CustomerLoginPage customerLoginPage;
-    public static CustomerLoginPage getInstance() {
-        if(customerLoginPage == null) {
-            return new CustomerLoginPage();
-        }
-        return customerLoginPage;
+
+    public CustomerLoginPage(RemoteWebDriver driver) {
+        super(driver);
     }
 
     public CustomerLoginPage chooseName(String name) {
@@ -28,9 +28,10 @@ public class CustomerLoginPage extends BasePage {
         return this;
     }
 
+    @Step("Login as {name}")
     public AccountPage loginAs(String name) {
         chooseName(name);
         driver.findElement(login).click();
-        return AccountPage.getInstance();
+        return new AccountPage(driver);
     }
 }

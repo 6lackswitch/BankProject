@@ -4,8 +4,10 @@ import Base.BasePage;
 import Base.Config;
 import com.opencsv.CSVWriter;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,13 +18,12 @@ public class TransactionsPage extends BasePage {
     private final By tableHeader = By.xpath("//thead//tr/*");
     private final By tableRows = By.xpath("//tbody/*");
     private static TransactionsPage transactionsPage;
-    public static TransactionsPage getInstance() {
-        if(transactionsPage == null) {
-            return new TransactionsPage();
-        }
-        return transactionsPage;
+
+    public TransactionsPage(RemoteWebDriver driver) {
+        super(driver);
     }
 
+    @Step("Extract transactions table to .csv")
     public void extractToCsv(Table table) {
         File file = new File(Config.PATH);
         try {
@@ -71,6 +72,6 @@ public class TransactionsPage extends BasePage {
 
     public AccountPage back() {
         driver.findElement(backButton).click();
-        return AccountPage.getInstance();
+        return new AccountPage(driver);
     }
 }

@@ -12,7 +12,7 @@ public class TransactionTest extends BaseTest {
 
     @Test
     public void transactionsTest() {
-        String balance = LoginPage.getInstance()
+        String balance = new LoginPage(getDriver())
                 .customerLogin()
                 .loginAs("Harry Potter")
                 .depositClick()
@@ -21,21 +21,20 @@ public class TransactionTest extends BaseTest {
 
         Assert.assertEquals(balance, fibonacciInt());
 
-        balance = AccountPage.getInstance()
+        balance = new AccountPage(getDriver())
                 .withdrawlClick()
                 .setTransaction(fibonacciInt())
                 .getBalance();
 
         Assert.assertEquals(balance, "0");
 
-        Table table = AccountPage
-                .getInstance()
+        Table table = new AccountPage(getDriver())
                 .transactionsClick()
                 .getTable();
 
         Assert.assertEquals(table.getRows().size(), 2);
 
-        TransactionsPage.getInstance()
+        new TransactionsPage(getDriver())
                 .extractToCsv(table);
     }
 }
